@@ -29,6 +29,13 @@ KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.
 # Assert
 TARGET_OTA_ASSERT_DEVICE := hwY635,Y635-L01,Y635-L02,Y635-L03,Y635-L11,Y635-L21
 
+# init
+TARGET_LIBINIT_MSM8916_DEFINES_FILE := $(DEVICE_PATH)/init/init_hwY635.cpp
+
+# Kernel
+TARGET_KERNEL_SOURCE := kernel/huawei/hwY635
+TARGET_KERNEL_CONFIG := lineageos_hwY635_defconfig
+
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
