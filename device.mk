@@ -15,6 +15,10 @@
 
 $(call inherit-product-if-exists, vendor/huawei/hwY635/hwY635-vendor.mk)
 
+# Boot animation
+TARGET_SCREEN_HEIGHT := 854
+TARGET_SCREEN_WIDTH := 480
+
 # NFC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc-nci.conf:system/etc/nfc-nci.conf \
