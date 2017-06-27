@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -20,13 +20,13 @@
 # inherit from msm8916-common
 -include device/huawei/msm8916-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/huawei/cherry
+DEVICE_PATH := device/huawei/hwY635
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := c8817d,g620s,C8817D,C8817E,G621-TL00,G620S-UL00,G620S-L01,Che1-CL20,Che1-L04
+TARGET_OTA_ASSERT_DEVICE := hwY635,Y635-L01,Y635-L02,Y635-L03,Y635-L11,Y635-L21
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)/releasetools
 
 # inherit from the proprietary version
--include vendor/huawei/cherry/BoardConfigVendor.mk
+-include vendor/huawei/hwY635/BoardConfigVendor.mk

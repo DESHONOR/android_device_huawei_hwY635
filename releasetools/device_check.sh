@@ -1,6 +1,6 @@
 #!/sbin/sh
 #
-# Copyright (C) 2016 CyanogenMod Project
+# Copyright (C) 2017 LineageOS Project
 #
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +17,7 @@
 #
 
 PRODUCT_MODEL=`getprop ro.product.model`
-NFC_MODEL="C8817D C8817E G620S-L01"
+NFC_MODEL="Y635-L21"
 
 RESULT=$(echo $NFC_MODEL | grep "$PRODUCT_MODEL")
 
