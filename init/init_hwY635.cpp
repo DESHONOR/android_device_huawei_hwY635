@@ -30,13 +30,25 @@
 #include <cstdlib>
 #include <fstream>
 #include <string>
-
+#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
+#include <sys/_system_properties.h>
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
 
 #include "init_msm8916.h"
+
+void property_override(char const prop[], char const value[])
+{
+    prop_info *pi;
+
+    pi = (prop_info*) __system_property_find(prop);
+    if (pi)
+        __system_property_update(pi, value, strlen(value));
+    else
+        __system_property_add(prop, strlen(prop), value, strlen(value));
+}
 
 void init_target_properties()
 {
@@ -51,41 +63,41 @@ void init_target_properties()
 
     /* Y635-L01 */
     if (buf.find("Y635-L01") != std::string::npos) {
-        property_set("ro.product.model", "Y635-L01");
-        property_set("ro.product.name", "Y635-L01");
-        property_set("ro.product.device", "Y635-L01");
-        property_set("ro.build.product", "Y635-L01");
+        property_override("ro.product.model", "Y635-L01");
+        property_override("ro.product.name", "Y635-L01");
+        property_override("ro.product.device", "Y635-L01");
+        property_override("ro.build.product", "Y635-L01");
         property_set("ro.build.description", "Y635-L01-user 4.4.4 GRJ90 C21B131 release-keys");
         property_set("ro.build.fingerprint", "Huawei/Y635-L01/hwY635:4.4.4/HuaweiY635-L01/C21B131:user/release-keys");
 	}
     /* Y635-L02 */
     else if (buf.find("Y635-L02") != std::string::npos) {
-        property_set("ro.product.model", "Y635-L02");
-        property_set("ro.product.name", "Y635-L02");
-        property_set("ro.product.device", "Y635-L02");
-        property_set("ro.build.product", "Y635-L02");
+        property_override("ro.product.model", "Y635-L02");
+        property_override("ro.product.name", "Y635-L02");
+        property_override("ro.product.device", "Y635-L02");
+        property_override("ro.build.product", "Y635-L02");
 	}
     /* Y635-L03 */
     else if (buf.find("Y635-L03") != std::string::npos) {
-        property_set("ro.product.model", "Y635-L03");
-        property_set("ro.product.name", "Y635-L03");
-        property_set("ro.product.device", "Y635-L03");
-        property_set("ro.build.product", "Y635-L03");
+        property_override("ro.product.model", "Y635-L03");
+        property_override("ro.product.name", "Y635-L03");
+        property_override("ro.product.device", "Y635-L03");
+        property_override("ro.build.product", "Y635-L03");
         property_set("ro.build.description", "Y635-L03-user 4.4.4 GRJ90 C69B003 release-keys");
         property_set("ro.build.fingerprint", "Huawei/Y635-L03/hwY635:4.4.4/HuaweiY635-L03/C69B003:user/release-keys");
 	}
     /* Y635-L11 */
     else if (buf.find("Y635-L11") != std::string::npos) {
-        property_set("ro.product.model", "Y635-L11");
-        property_set("ro.product.name", "Y635-L11");
-        property_set("ro.product.device", "Y635-L11");
-        property_set("ro.build.product", "Y635-L11");
+        property_override("ro.product.model", "Y635-L11");
+        property_override("ro.product.name", "Y635-L11");
+        property_override("ro.product.device", "Y635-L11");
+        property_override("ro.build.product", "Y635-L11");
 	}
     /* Y635-L21 */
     else if (buf.find("Y635-L21") != std::string::npos) {
-        property_set("ro.product.model", "Y635-L21");
-        property_set("ro.product.name", "Y635-L21");
-        property_set("ro.product.device", "Y635-L21");
-        property_set("ro.build.product", "Y635-L21");
+        property_override("ro.product.model", "Y635-L21");
+        property_override("ro.product.name", "Y635-L21");
+        property_override("ro.product.device", "Y635-L21");
+        property_override("ro.build.product", "Y635-L21");
 	}
 }
