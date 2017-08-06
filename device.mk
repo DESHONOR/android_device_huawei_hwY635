@@ -19,6 +19,10 @@ $(call inherit-product-if-exists, vendor/huawei/hwY635/hwY635-vendor.mk)
 TARGET_SCREEN_HEIGHT := 854
 TARGET_SCREEN_WIDTH := 480
 
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.adb.secure=0
+
 # NFC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc-nci.conf:system/etc/nfc-nci.conf \
